@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: [:destroy]
   resources :movies, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  root to: "articles#index"
+  resources :articles, except: :index
   # Defines the root path route ("/")
   # root "posts#index"
 end
